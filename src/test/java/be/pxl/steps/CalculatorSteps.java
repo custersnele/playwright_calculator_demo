@@ -49,9 +49,8 @@ public class CalculatorSteps {
         calculatorPage.setNumber2(number);
     }
 
-    @When("I check {string}")
-    public void iCheck(String checkboxLabel) {
-        // For simplicity, we assume it's the "Double the first number" checkbox
+    @When("I check Double the first number")
+    public void iCheckDoubleTheFirstNumber() {
         calculatorPage.enableDoubleFirstNumber(true);
     }
 
@@ -64,9 +63,8 @@ public class CalculatorSteps {
         }
     }
 
-    @When("I click on {string}")
-    public void iClickOn(String buttonLabel) {
-        // For simplicity, we assume there's only a "Calculate" button
+    @When("I click on Calculate")
+    public void iClickOnCalculate() {
         calculatorPage.clickCalculate();
     }
 
