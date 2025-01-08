@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculation Test Page</title>
+    <script>
+        function calculate() {
+            // Get the two numbers (default to 0 if blank)
+            const number1 = parseFloat(document.querySelector('[data-testid="inputNumber1"]').value) || 0;
+            const number2 = parseFloat(document.querySelector('[data-testid="inputNumber2"]').value) || 0;
+
+            // Check if the user wants to double the first number
+            const doubleChecked = document.querySelector('[data-testid="checkboxDouble"]').checked;
+            const firstNumber = doubleChecked ? number1 * 2 : number1;
+
+            // Identify which operation is selected
+            const operation = document.querySelector('input[name="operation"]:checked').value;
+
+            // Perform the calculation
+            let result;
+            if (operation === "sum") {
+                result = firstNumber + number2;
+            } else { // "multiply"
+                // bug inserted intently
+                result = firstNumber - number2;
+            }
+
+            // Display the result
+            document.querySelector('[data-testid="result"]').innerText = `Result: ${result}`;
+        }
+    </script>
+</head>
+<body>
+<h1>Simple Calculation Page</h1>
+<form>
+    <label for="number1">Enter the first number:</label>
+    <input
+            type="number"
+            id="number1"
+            step="any"
+            data-testid="inputNumber1"
+    /><br><br>
+
+    <label for="number2">Enter the second number:</label>
+    <input
+            type="number"
+            id="number2"
+            step="any"
+            data-testid="inputNumber2"
+    /><br><br>
+
+    <label>
+        <input
+                type="radio"
+                name="operation"
+                value="sum"
+                data-testid="radioSum"
+                checked
+        />
+        Sum
+    </label>
+    <label>
+        <input
+                type="radio"
+                name="operation"
+                value="multiply"
+                data-testid="radioMultiply"
+        />
+        Multiply
+    </label><br><br>
+
+    <label for="checkboxDouble">
+        <input
+                type="checkbox"
+                id="checkboxDouble"
+                data-testid="checkboxDouble"
+        />
+        Double the first number
+    </label><br><br>
+
+    <button
+            type="button"
+            onclick="calculate()"
+            data-testid="buttonCalculate"
+    >
+        Calculate
+    </button>
+</form>
+
+<p data-testid="result"></p>
+</body>
+</html>
