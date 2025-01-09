@@ -9,6 +9,7 @@ De gebruiker kan:
 - Kiezen tussen optellen (sum) of vermenigvuldigen (multiply)
 
 Na het klikken op Calculate-knop wordt het resultaat getoond in de pagina.
+
 ![Webpagina](images/img_1.png)
 
 Deze web-pagina vind je in de folder src/main/resources/web/calculation.html.
@@ -37,8 +38,9 @@ mvn clean verify -Dbase.url="<path_to_project>\src\main\resources\web\"
 ```
 of 
 ```
-mvn clean verify -Dbase.url=file:///<path_to_project>\src\main\resources\web\
+mvn clean verify -Dbase.url=file:///<path_to_project>/src/main/resources/web/
 ```
+Test zeker voor het examen uit hoe op jouw systeem de base.url moet meegegeven worden, zodat je hier tijdens het examen geen tijd mee verliest.
 
 ### Opdracht
 
