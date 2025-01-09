@@ -35,6 +35,10 @@ of
 ```
 mvn clean verify -Dbase.url="<path_to_project>\src\main\resources\web\"
 ```
+of 
+```
+mvn clean verify -Dbase.url=file:///<path_to_project>\src\main\resources\web\
+```
 
 ### Opdracht
 
